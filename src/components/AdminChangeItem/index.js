@@ -1,43 +1,35 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 
-export function ChangeItem() {
-    const params = useParams();
+export function ChangeItem(props) {
+    // const params = useParams();
+
+    console.log(props);
     const [details, setDetails] = useState({
-        type: "",
-        title: "",
-        price: "",
-        image: "",
-        description: "",
+        type: props.id.type,
+        title: props.id.title,
+        price: props.id.price,
+        image: props.id.image,
+        description: props.id.description,
     });
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await axios.get(
-                `LINK HERE`
-            );
-            setDetails({ ...response.data });
-        }
-        fetchData();
-    }, [params.itemId])
 
     function handleChange(event) {
+        console.log(event.target.value)
         setDetails({ ...details, [event.target.name]: event.target.value });
     }
 
     function handleSubmit(event) {
         event.preventDefault();
 
-        const editObject = { ...form };
-        delete editObject._id;
+        const editObject = { ...details };
 
         axios.put(
-            `LINK HERE`,
+            `https://ironrest.herokuapp.com/retrogeh/${props.id._id}`,
             editObject
         );
-
+        
         setDetails({
             type: "",
             title: "",
@@ -51,36 +43,37 @@ export function ChangeItem() {
         <form onSubmit={handleSubmit}>
             <label htmlFor="inputType">Type</label>
             <input
+                type="text"
                 id="inputType"
-                value={form.type}
+                value={details.type}
                 name="type"
                 onChange={handleChange}
             />
             <label htmlFor="inputTitle">Title</label>
             <input 
                 id="inputTitle"
-                value={form.title}
+                value={details.title}
                 name="title"
                 onChange={handleChange}
             />
             <label htmlFor="inputPrice">Price</label>
             <input 
                 id="inputPrice"
-                value={form.price}
+                value={details.price}
                 name="price"
                 onChange={handleChange}               
             />
             <label htmlFor="inputImage">Image</label>
             <input 
                 id="inputImage"
-                value={form.image}
+                value={details.image}
                 name="image"
                 onChange={handleChange}
             />
             <label htmlFor="inputDescription">Description</label>
             <input 
                 id="inputDescription"
-                value={form.description}
+                value={details.description}
                 name="description"
                 onChange={handleChange}
             />

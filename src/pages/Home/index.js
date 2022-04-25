@@ -1,8 +1,12 @@
+import { ReadItems } from "../../components/AdminReadItems";
 import { Navbar } from "../../components/Navbar";
 
 
 export function Home() {
     return (
-        <Navbar />
+        <div>
+            <Navbar />
+            {/* <ReadItems /> */}
+        </div>
     );
 }

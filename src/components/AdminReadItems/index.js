@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { AddItem } from "../AdminAddItem";
 import { ChangeItem } from "../AdminChangeItem";
 import { DeleteItem } from "../AdminDeleteItem";
 
@@ -9,17 +10,18 @@ export function ReadItems() {
     useEffect(() => {
         async function fetchItems() {
             const response = await axios.get (
-                "LINK HERE"
+                "https://ironrest.herokuapp.com/retrogeh"
             );
-            setData(responde.data);
+            setData(response.data);
         }
         fetchItems();
     }, [])
 
     return (
         <div>
-            <h1>List of all items for currently for sale</h1>
+            <h1>List of all items currently for sale</h1>
             <div>
+                <AddItem />
                 {data.map((currentItem) => {return(
                     <div>
                         <p>Type: {currentItem.type}</p>
@@ -29,7 +31,7 @@ export function ReadItems() {
                         <p>description: {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />
-                            <ChangeItem id={currentItem._id} />
+                            <ChangeItem id={currentItem} />
                         </div>
                     </div>
                 )

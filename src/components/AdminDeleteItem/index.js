@@ -1,10 +1,15 @@
 import axios from "axios";
 
 
-export function DeleteItem() {
+
+export function DeleteItem(props) {
+
+
 
     function handleDelete() {
-        axios.delete(`LINK HERE`)
+        console.log("Deletou", props.id)
+        axios.delete(`https://ironrest.herokuapp.com/retrogeh/${props.id}`)
+        // window.href="/";
     }
 
     return(

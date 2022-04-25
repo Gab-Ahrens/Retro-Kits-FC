@@ -19,7 +19,7 @@ export function AddItem() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        axios.post("", form);
+        axios.post("https://ironrest.herokuapp.com/retrogeh", details);
 
         setDetails({
             type: "",
@@ -35,35 +35,35 @@ export function AddItem() {
             <label htmlFor="inputType">Type</label>
             <input
                 id="inputType"
-                value={form.type}
+                value={details.type}
                 name="type"
                 onChange={handleChange}
             />
             <label htmlFor="inputTitle">Title</label>
             <input 
                 id="inputTitle"
-                value={form.title}
+                value={details.title}
                 name="title"
                 onChange={handleChange}
             />
             <label htmlFor="inputPrice">Price</label>
             <input 
                 id="inputPrice"
-                value={form.price}
+                value={details.price}
                 name="price"
                 onChange={handleChange}               
             />
             <label htmlFor="inputImage">Image</label>
             <input 
                 id="inputImage"
-                value={form.image}
+                value={details.image}
                 name="image"
                 onChange={handleChange}
             />
             <label htmlFor="inputDescription">Description</label>
             <input 
                 id="inputDescription"
-                value={form.description}
+                value={details.description}
                 name="description"
                 onChange={handleChange}
             />
