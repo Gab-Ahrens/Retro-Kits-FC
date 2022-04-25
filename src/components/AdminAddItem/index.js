@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 export function AddItem() {
-    const [form, setForm] = useState({
+    const [details, setDetails] = useState({
         type: "",
         title: "",
         price: "",
@@ -13,7 +13,7 @@ export function AddItem() {
     })
 
     function handleChange(event) {
-        setForm({ ...form, [event.target.name]: event.target.value });
+        setDetails({ ...details, [event.target.name]: event.target.value });
     }
 
     function handleSubmit(event) {
@@ -21,7 +21,7 @@ export function AddItem() {
 
         axios.post("", form);
 
-        setForm({
+        setDetails({
             type: "",
             title: "",
             price: "",
@@ -39,24 +39,28 @@ export function AddItem() {
                 name="type"
                 onChange={handleChange}
             />
+            <label htmlFor="inputTitle">Title</label>
             <input 
                 id="inputTitle"
                 value={form.title}
                 name="title"
                 onChange={handleChange}
             />
+            <label htmlFor="inputPrice">Price</label>
             <input 
                 id="inputPrice"
                 value={form.price}
                 name="price"
                 onChange={handleChange}               
             />
+            <label htmlFor="inputImage">Image</label>
             <input 
                 id="inputImage"
                 value={form.image}
                 name="image"
                 onChange={handleChange}
             />
+            <label htmlFor="inputDescription">Description</label>
             <input 
                 id="inputDescription"
                 value={form.description}
