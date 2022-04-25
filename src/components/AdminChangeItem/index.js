@@ -50,28 +50,32 @@ export function ChangeItem(props) {
                 onChange={handleChange}
             />
             <label htmlFor="inputTitle">Title</label>
-            <input 
+            <input
+                type="text"
                 id="inputTitle"
                 value={details.title}
                 name="title"
                 onChange={handleChange}
             />
             <label htmlFor="inputPrice">Price</label>
-            <input 
+            <input
+                type="number"
                 id="inputPrice"
                 value={details.price}
                 name="price"
                 onChange={handleChange}               
             />
             <label htmlFor="inputImage">Image</label>
-            <input 
+            <input
+                type="text"
                 id="inputImage"
                 value={details.image}
                 name="image"
                 onChange={handleChange}
             />
             <label htmlFor="inputDescription">Description</label>
-            <input 
+            <input
+                type="text"
                 id="inputDescription"
                 value={details.description}
                 name="description"
