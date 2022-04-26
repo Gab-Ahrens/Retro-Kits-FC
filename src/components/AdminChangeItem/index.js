@@ -3,20 +3,18 @@ import { useEffect, useState } from "react";
 
 
 export function ChangeItem(props) {
-    // const params = useParams();
 
-    console.log(props);
     const [details, setDetails] = useState({
         type: props.id.type,
         title: props.id.title,
         price: props.id.price,
-        image: props.id.image,
+        img: props.id.img,
         description: props.id.description,
     });
+    // console.log(details.img)
 
 
     function handleChange(event) {
-        console.log(event.target.value)
         setDetails({ ...details, [event.target.name]: event.target.value });
     }
 
@@ -34,9 +32,11 @@ export function ChangeItem(props) {
             type: "",
             title: "",
             price: "",
-            image: "",
+            img: "",
             description: "",           
         });
+
+        setTimeout(() => window.location.reload(), 500)
     }
 
     return (
@@ -59,18 +59,18 @@ export function ChangeItem(props) {
             />
             <label htmlFor="inputPrice">Price</label>
             <input
-                type="number"
+                type="text"
                 id="inputPrice"
                 value={details.price}
                 name="price"
                 onChange={handleChange}               
             />
-            <label htmlFor="inputImage">Image</label>
+            <label htmlFor="inputImg">Image</label>
             <input
                 type="text"
-                id="inputImage"
-                value={details.image}
-                name="image"
+                id="inputImg"
+                value={details.img}
+                name="img"
                 onChange={handleChange}
             />
             <label htmlFor="inputDescription">Description</label>

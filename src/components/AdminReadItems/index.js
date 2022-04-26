@@ -7,6 +7,7 @@ import { DeleteItem } from "../AdminDeleteItem";
 
 export function ReadItems() {
     const [data, setData] = useState([]);
+
     useEffect(() => {
         async function fetchItems() {
             const response = await axios.get (
@@ -27,7 +28,7 @@ export function ReadItems() {
                         <p>Type: {currentItem.type}</p>
                         <p>Title: {currentItem.title}</p>
                         <p>Price: {currentItem.price} $</p>
-                        <p>Image: {currentItem.image}</p>
+                        <p>Image: {currentItem.img}</p>
                         <p>description: {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />

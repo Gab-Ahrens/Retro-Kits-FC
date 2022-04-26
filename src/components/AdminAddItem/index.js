@@ -8,7 +8,7 @@ export function AddItem() {
         type: "",
         title: "",
         price: "",
-        image: "",
+        img: "",
         description: "",
     })
 
@@ -25,9 +25,11 @@ export function AddItem() {
             type: "",
             title: "",
             price: "",
-            image: "",
+            img: "",
             description: "",
         });
+
+        setTimeout(() => window.location.reload(), 500)
     }
 
     return (
@@ -50,18 +52,18 @@ export function AddItem() {
             />
             <label htmlFor="inputPrice">Price</label>
             <input
-                type="number"
+                type="text"
                 id="inputPrice"
                 value={details.price}
                 name="price"
                 onChange={handleChange}               
             />
-            <label htmlFor="inputImage">Image</label>
+            <label htmlFor="inputImg">Image</label>
             <input
                 type="text"
-                id="inputImage"
-                value={details.image}
-                name="image"
+                id="inputImg"
+                value={details.img}
+                name="img"
                 onChange={handleChange}
             />
             <label htmlFor="inputDescription">Description</label>
