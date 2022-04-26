@@ -13,6 +13,8 @@ useEffect(()=>{
     fetchJersey()
     
 },[])
+
+
     return(
         <div className="home">
             <header className="heroimg">
@@ -23,11 +25,11 @@ useEffect(()=>{
             <h2>Nosso mix de clubes para você!</h2>
 
             <ul className="seleçoes">
-                {jerseys.filter((jersey)=>{return jersey.type==='club'}).map((jersey)=>{return(
+                {jerseys.filter((jersey)=>{return jersey.type==='club'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
-                <li className="card" key={jersey.id}>
-                    <img src={jersey.img} alt='jerseyimg'/>
-                    <p>{jersey.title}</p>
+                <li className="card" key={jersey._id}>
+                    <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
+                    <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>
                 </li>
@@ -38,11 +40,12 @@ useEffect(()=>{
             <h2>Nosso mix de seleções para você!</h2>
 
             <ul className="seleçoes">
-                {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).map((jersey)=>{return(
+                {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
-                <li className="card" key={jersey.id}>
+                <li className="card" key={jersey._id}>
+                <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <div className="imgjersey"></div>
-                    <p>{jersey.title}</p>
+                    <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>
                 </li>
