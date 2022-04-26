@@ -7,7 +7,7 @@ export function Navbar() {
         <div>
             <nav>
                 <ul>
-                    <li> Home</li>
+                    <li><Link to="/">Home</Link></li>
                     <li>Clubs </li>
                     <li>National Teams</li>
                     <li>View Shopping Cart</li>

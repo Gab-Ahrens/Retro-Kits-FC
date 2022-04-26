@@ -6,9 +6,7 @@ export function AdminPage() {
     return (
         <div>
             <Navbar />
-            <h1>Página do Admin</h1>
             <ReadItems />
         </div>
-
     );
 }

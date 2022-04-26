@@ -3,20 +3,22 @@ import { useEffect, useState } from "react";
 
 
 export function ChangeItem(props) {
-    // const params = useParams();
 
-    console.log(props);
+    const [dialogChangeItem, setdialogChangeItem] = useState(false)
+
     const [details, setDetails] = useState({
         type: props.id.type,
         title: props.id.title,
         price: props.id.price,
-        image: props.id.image,
+        img: props.id.img,
         description: props.id.description,
     });
 
+    function dialogHandleclick() {
+        setdialogChangeItem(true);
+    }
 
     function handleChange(event) {
-        console.log(event.target.value)
         setDetails({ ...details, [event.target.name]: event.target.value });
     }
 
@@ -34,55 +36,64 @@ export function ChangeItem(props) {
             type: "",
             title: "",
             price: "",
-            image: "",
+            img: "",
             description: "",           
         });
+
+        setdialogChangeItem(false)
+
+        setTimeout(() => window.location.reload(), 500)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="inputType">Type</label>
-            <input
-                type="text"
-                id="inputType"
-                value={details.type}
-                name="type"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputTitle">Title</label>
-            <input
-                type="text"
-                id="inputTitle"
-                value={details.title}
-                name="title"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputPrice">Price</label>
-            <input
-                type="number"
-                id="inputPrice"
-                value={details.price}
-                name="price"
-                onChange={handleChange}               
-            />
-            <label htmlFor="inputImage">Image</label>
-            <input
-                type="text"
-                id="inputImage"
-                value={details.image}
-                name="image"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputDescription">Description</label>
-            <input
-                type="text"
-                id="inputDescription"
-                value={details.description}
-                name="description"
-                onChange={handleChange}
-            />
-            <button type="submit">Change Item</button>
-        </form>
+        <div>
+            <button onClick={dialogHandleclick}>Modificar Item</button>
+            <dialog open={dialogChangeItem} >
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="inputType">Type</label>
+                    <input
+                        type="text"
+                        id="inputType"
+                        value={details.type}
+                        name="type"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputTitle">Title</label>
+                    <input
+                        type="text"
+                        id="inputTitle"
+                        value={details.title}
+                        name="title"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputPrice">Price</label>
+                    <input
+                        type="text"
+                        id="inputPrice"
+                        value={details.price}
+                        name="price"
+                        onChange={handleChange}               
+                    />
+                    <label htmlFor="inputImg">Image</label>
+                    <input
+                        type="text"
+                        id="inputImg"
+                        value={details.img}
+                        name="img"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputDescription">Description</label>
+                    <input
+                        type="text"
+                        id="inputDescription"
+                        value={details.description}
+                        name="description"
+                        onChange={handleChange}
+                    />
+                    <button type="submit">Change Item</button>
+                </form>
+            </dialog>
+        </div>
 
 
     );

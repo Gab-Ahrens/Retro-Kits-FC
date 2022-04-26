@@ -4,13 +4,20 @@ import { useState } from "react";
 
 
 export function AddItem() {
+
+    const [addOpen, setaddOpen] = useState(false)
+
     const [details, setDetails] = useState({
         type: "",
         title: "",
         price: "",
-        image: "",
+        img: "",
         description: "",
     })
+
+    function addOpenhandleClick() {
+        setaddOpen(true);
+    }
 
     function handleChange(event) {
         setDetails({ ...details, [event.target.name]: event.target.value });
@@ -25,54 +32,63 @@ export function AddItem() {
             type: "",
             title: "",
             price: "",
-            image: "",
+            img: "",
             description: "",
         });
+
+        setaddOpen(false)
+
+        setTimeout(() => window.location.reload(), 500)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="inputType">Type</label>
-            <input
-                type="text"
-                id="inputType"
-                value={details.type}
-                name="type"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputTitle">Title</label>
-            <input
-                type="text"
-                id="inputTitle"
-                value={details.title}
-                name="title"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputPrice">Price</label>
-            <input
-                type="number"
-                id="inputPrice"
-                value={details.price}
-                name="price"
-                onChange={handleChange}               
-            />
-            <label htmlFor="inputImage">Image</label>
-            <input
-                type="text"
-                id="inputImage"
-                value={details.image}
-                name="image"
-                onChange={handleChange}
-            />
-            <label htmlFor="inputDescription">Description</label>
-            <input 
-                type="text"
-                id="inputDescription"
-                value={details.description}
-                name="description"
-                onChange={handleChange}
-            />
-            <button type="submit">Add Item</button>
-        </form>
+        <div>
+            <button onClick={addOpenhandleClick}>Adicionar Novo Item</button>
+            <dialog open={addOpen}>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="inputType">Type</label>
+                    <input
+                        type="text"
+                        id="inputType"
+                        value={details.type}
+                        name="type"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputTitle">Title</label>
+                    <input
+                        type="text"
+                        id="inputTitle"
+                        value={details.title}
+                        name="title"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputPrice">Price</label>
+                    <input
+                        type="text"
+                        id="inputPrice"
+                        value={details.price}
+                        name="price"
+                        onChange={handleChange}               
+                    />
+                    <label htmlFor="inputImg">Image</label>
+                    <input
+                        type="text"
+                        id="inputImg"
+                        value={details.img}
+                        name="img"
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="inputDescription">Description</label>
+                    <input 
+                        type="text"
+                        id="inputDescription"
+                        value={details.description}
+                        name="description"
+                        onChange={handleChange}
+                    />
+                    <button type="submit">Add Item</button>
+                </form>
+            </dialog>
+        </div>
     );
 }
