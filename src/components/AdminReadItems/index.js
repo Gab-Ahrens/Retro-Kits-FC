@@ -8,7 +8,6 @@ import { Navbar } from "../Navbar";
 
 export function ReadItems() {
     const [data, setData] = useState([]);
-
     useEffect(() => {
         async function fetchItems() {
             const response = await axios.get (
