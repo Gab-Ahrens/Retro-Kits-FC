@@ -30,6 +30,7 @@ export function ReadItems() {
                         <p>Title: {currentItem.title}</p>
                         <p>Price: {currentItem.price} $</p>
                         <p>Image: {currentItem.img}</p>
+                        <img src={currentItem.img} />
                         <p>Description: {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />
