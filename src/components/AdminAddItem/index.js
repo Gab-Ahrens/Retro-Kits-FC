@@ -43,7 +43,7 @@ export function AddItem() {
 
     return (
         <div>
-            <button onClick={addOpenhandleClick}>Adicionar Item</button>
+            <button onClick={addOpenhandleClick}>Adicionar Novo Item</button>
             <dialog open={addOpen}>
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="inputType">Type</label>

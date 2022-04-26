@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { AddItem } from "../AdminAddItem";
 import { ChangeItem } from "../AdminChangeItem";
 import { DeleteItem } from "../AdminDeleteItem";
+import { Navbar } from "../Navbar";
 
 
 export function ReadItems() {
@@ -20,8 +21,8 @@ export function ReadItems() {
 
     return (
         <div>
-            <h1>List of all items currently for sale</h1>
             <div>
+                <h2>Área de Gerenciamento</h2>
                 <AddItem />
                 {data.map((currentItem) => {return(
                     <div>
@@ -29,7 +30,7 @@ export function ReadItems() {
                         <p>Title: {currentItem.title}</p>
                         <p>Price: {currentItem.price} $</p>
                         <p>Image: {currentItem.img}</p>
-                        <p>description: {currentItem.description}</p>
+                        <p>Description: {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />
                             <ChangeItem id={currentItem} />
