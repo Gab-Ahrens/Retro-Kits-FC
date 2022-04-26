@@ -28,7 +28,7 @@ useEffect(()=>{
                 {jerseys.filter((jersey)=>{return jersey.type==='club'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
                 <li className="card" key={jersey._id}>
-                    <img src={require(`../../assets/clubes/${jersey.img}.png`)} alt='jerseyimg'/>
+                    <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>
@@ -43,7 +43,7 @@ useEffect(()=>{
                 {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
                 <li className="card" key={jersey._id}>
-                <img src={require(`../../assets/seleçoes/${jersey.img}.png`)} alt='jerseyimg'/>
+                <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <div className="imgjersey"></div>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>

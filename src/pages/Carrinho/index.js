@@ -19,7 +19,7 @@ export function Carrinho () {
                 {jerseys.map((jersey)=>{return(
 
                 <li className="card" key={jersey.id}>
-                    <img src={jersey.img} alt='jerseyimg'/>
+                    
                     <p>{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>

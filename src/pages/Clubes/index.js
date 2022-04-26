@@ -19,7 +19,7 @@ export function Clubes () {
                 {jerseys.filter((jersey)=>{return jersey.type==='club'}).map((jersey)=>{return(
 
                 <li className="card" key={jersey.id}>
-                    <img src={require(`../../assets/clubes/${jersey.img}.png`)} alt='jerseyimg'/>
+                    <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>

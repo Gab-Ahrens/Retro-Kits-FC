@@ -26,7 +26,7 @@ async function addCart(event){
                 {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).map((jersey)=>{return(
 
                 <li className="card" key={jersey.id}>
-                    <img src={require(`../../assets/seleçoes/${jersey.img}.png`)} alt='jerseyimg'/>
+                    <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart" name={jersey.id} onClick={addCart}>Adicionar ao carrinho</button>
