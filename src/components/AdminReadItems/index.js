@@ -6,6 +6,7 @@ import { DeleteItem } from "../AdminDeleteItem";
 import { Navbar } from "../Navbar";
 
 
+
 export function ReadItems() {
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -18,19 +19,20 @@ export function ReadItems() {
         fetchItems();
     }, [])
 
+
     return (
         <div>
             <div>
                 <h2>Área de Gerenciamento</h2>
                 <AddItem />
-                {data.map((currentItem) => {return(
+                {data.map((currentItem) => { return(
                     <div>
-                        <p>Type: {currentItem.type}</p>
-                        <p>Title: {currentItem.title}</p>
-                        <p>Price: {currentItem.price} $</p>
-                        <p>Image: {currentItem.img}</p>
-                        <img src={currentItem.img} />
-                        <p>Description: {currentItem.description}</p>
+                        <p>Tipo: {currentItem.type}</p>
+                        <p>Título: {currentItem.title}</p>
+                        <p>Preço: R$ {currentItem.price}</p>
+                        <p>Imagem: {currentItem.img}</p>
+                        {/* <img src={require(`../../assets/clubes/${currentItem.img}.png`)}/> */}
+                        <p>Descrição: {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />
                             <ChangeItem id={currentItem} />

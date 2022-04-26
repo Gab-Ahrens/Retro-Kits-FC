@@ -26,7 +26,7 @@ useEffect(()=>{
                 {jerseys.filter((jersey)=>{return jersey.type==='club'}).map((jersey)=>{return(
 
                 <li className="card" key={jersey.id}>
-                    <img src={jersey.img} alt='jerseyimg'/>
+                    <img src={require(`../../assets/clubes/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p>{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
                     <button className="addcart">Adicionar ao carrinho</button>
@@ -41,6 +41,7 @@ useEffect(()=>{
                 {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).map((jersey)=>{return(
 
                 <li className="card" key={jersey.id}>
+                    <img src={require(`../../assets/seleçoes/${jersey.img}.png`)} alt='jerseyimg'/>
                     <div className="imgjersey"></div>
                     <p>{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
