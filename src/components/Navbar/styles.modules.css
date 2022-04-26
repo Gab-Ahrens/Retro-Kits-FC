@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Gotham ;
+    src: url("../../assets/GothamMedium_1.ttf");
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    
+}
+
+.navbarul{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    list-style: none;
+    
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: Gotham;
+}
+
+.navform{
+    margin-right: 50px;
+}
+
+.navinput{
+width: 450px;
+height: 35px;
+background-color: black;
+color: white;
+border: 2px solid white;
+border-radius: 5px;
+font-size: 15px;
+font-family: Gotham;
+padding-left: 10px;
+}
+
+.navinput::placeholder{
+    color: white;
+}
+
+.navbutton{
+width: 100px;
+height: 35px;
+background-color: black;
+color: white;
+border: 2px solid white;
+border-radius: 5px;
+font-family: Gotham;
+font-size: 15px;
+margin-left: 10px;
+}
+
+
+
