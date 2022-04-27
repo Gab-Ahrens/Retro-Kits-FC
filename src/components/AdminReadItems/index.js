@@ -4,6 +4,8 @@ import { AddItem } from "../AdminAddItem";
 import { ChangeItem } from "../AdminChangeItem";
 import { DeleteItem } from "../AdminDeleteItem";
 import { Navbar } from "../Navbar";
+import "./styles.modules.css"
+
 
 
 export function ReadItems() {
@@ -18,23 +20,28 @@ export function ReadItems() {
         fetchItems();
     }, [])
 
+
     return (
         <div>
-            <div>
+            <div className="gerencia">
                 <h2>Área de Gerenciamento</h2>
-                <AddItem />
-                {data.map((currentItem) => {return(
-                    <div>
-                        <p>Type: {currentItem.type}</p>
-                        <p>Title: {currentItem.title}</p>
-                        <p>Price: {currentItem.price} $</p>
-                        <p>Image: {currentItem.img}</p>
-                        <img src={currentItem.img} />
-                        <p>Description: {currentItem.description}</p>
+                <div className="additembtn">
+                    <AddItem />
+                    <hr></hr>
+                </div>
+                {data.map((currentItem) => { return(
+                    <div className="details">
+                        <p><b>Time:</b> {currentItem.title}</p>
+                        <p><b>Tipo</b>: {currentItem.type}</p>
+                        <p><b>Preço:</b> R$ {currentItem.price}</p>
+                        <p><b>Imagem:</b> {currentItem.img}</p>
+                        <img src={require(`../../assets/jerseys/${currentItem.img}.png`)}/>
+                        <p><b>Descrição:</b> {currentItem.description}</p>
                         <div className="adminButtons">
                             <DeleteItem id={currentItem._id} />
                             <ChangeItem id={currentItem} />
                         </div>
+                        <hr></hr>
                     </div>
                 )
                 })}

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Gotham ;
+    src: url("../../assets/GothamMedium_1.ttf");
+}
+
+.gerencia {
+    font-family: Gotham;
+    margin: 15px;
+    padding-top: 10px;
+}
+
+.details img {
+    width: 300px;
+    border: solid;
+    margin: 10px 5px;
+}
+
+.details hr {
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid;
+}
+
+.adminButtons {
+    display: flex;
+    margin-top: 10px;
+}
+
+.additembtn {
+    margin-bottom: 10px;
+}
+
+.additembtn hr {
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid;
+}
