@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer } from "./components/Footer";
+import { ShowItemDetails } from "./components/ItemDetails";
 import { Navbar } from "./components/Navbar";
 import { AdminPage } from "./pages/Admin";
 import { Carrinho } from "./pages/Carrinho";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/clubes" element={<Clubes />}/>
         <Route path="/selecoes" element={<Selecoes />}/>
         <Route path="/carrinho" element={<Carrinho />}/>
+        <Route path="/details/:id" element={<ShowItemDetails />} />
       </Routes>
       <Footer />
       </BrowserRouter>

@@ -10,7 +10,7 @@ export function AddItem() {
     const [details, setDetails] = useState({
         type: "",
         title: "",
-        price: "",
+        price: 0,
         img: "",
         description: "",
     })
@@ -21,6 +21,13 @@ export function AddItem() {
 
     function handleChange(event) {
         setDetails({ ...details, [event.target.name]: event.target.value });
+        console.log(details)
+    }
+
+    function handleNumbers(event) {
+        const number = parseInt(event.target.value)
+        setDetails({ ...details, [event.target.name]: number });
+        console.log(details)
     }
 
     function handleSubmit(event) {
@@ -31,7 +38,7 @@ export function AddItem() {
         setDetails({
             type: "",
             title: "",
-            price: "",
+            price: 0,
             img: "",
             description: "",
         });
@@ -64,11 +71,11 @@ export function AddItem() {
                     />
                     <label htmlFor="inputPrice">Price</label>
                     <input
-                        type="text"
+                        type="number"
                         id="inputPrice"
                         value={details.price}
                         name="price"
-                        onChange={handleChange}               
+                        onChange={handleNumbers}               
                     />
                     <label htmlFor="inputImg">Image</label>
                     <input
