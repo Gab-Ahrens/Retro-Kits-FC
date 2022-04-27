@@ -18,7 +18,6 @@ export function Navbar() {
                     <li><Link to='/clubes' component={<Clubes />} className='link'>Clubes</Link> </li>
                     <li><Link to='/selecoes' component={<Selecoes />} className='link'>Seleções</Link></li>
                     <li><Link to='/carrinho' component={<Carrinho />} className='link'>Ver Carrinho</Link></li>
-                    <li><Link to="/admin" component={<AdminPage/>} className='link'>Admin</Link></li>
                 </ul>
                 <form className="navform">
                 <input

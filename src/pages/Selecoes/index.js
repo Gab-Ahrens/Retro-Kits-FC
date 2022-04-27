@@ -13,9 +13,11 @@ export function Selecoes () {
 },[])
 
 async function addCart(event){
-    const cartitem = await axios.get(`https://ironrest.herokuapp.com/retrogeh/${event.target.name}`)
-    console.log(event.target)
-    console.log(cartitem.data)
+    const response = await axios.get(`https://ironrest.herokuapp.com/findOne/retrogeh?img=${event.target.id}`)
+    const cartitem = response.data
+    console.log(cartitem)
+    axios.post("https://ironrest.herokuapp.com/favgeh",cartitem)
+    
 }
 
     return (
@@ -29,7 +31,7 @@ async function addCart(event){
                     <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price}</p>
-                    <button className="addcart" name={jersey.id} onClick={addCart}>Adicionar ao carrinho</button>
+                    <button className="addcart" id={jersey.img} onClick={addCart}>Adicionar ao carrinho</button>
                 </li>
 
         )})}
