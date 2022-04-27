@@ -12,6 +12,7 @@ export function Navbar() {
     return (
         <div>
             <nav className="navbar">
+                <img src={require("../../assets/logo/retrofclogo.png")}/>
                 <ul className="navbarul">
                     <li><Link to='/' component={<Home/>} className='link'>Home</Link></li>
                     <li><Link to='/clubes' component={<Clubes />} className='link'>Clubes</Link> </li>
