@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { AdminPage } from "./pages/Admin";
 import { Carrinho } from "./pages/Carrinho";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/selecoes" element={<Selecoes />}/>
         <Route path="/carrinho" element={<Carrinho />}/>
       </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );

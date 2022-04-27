@@ -1,0 +1,46 @@
+@font-face {
+    font-family: Gotham ;
+    src: url("../../assets/GothamMedium_1.ttf");
+}
+
+footer {
+    font-family: Gotham;
+    background-color: black;
+    padding: 40px 100px 40px 100px;
+    display: flex;
+    justify-content: space-bewteen;
+    align-items: center;
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+.footersocial a {
+    font-family: Gotham;
+    list-style: none;
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.footersocial img {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.footerinfo {
+    font-family: Gotham;
+    list-style: none;
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.logo img {
+    width: 150px;
+}
+
