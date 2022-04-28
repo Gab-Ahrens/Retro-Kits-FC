@@ -21,11 +21,10 @@
 	align-content: stretch;;
 }
 
-.container img {
+.itemImg {
     width: 500px;
     border: solid;
     margin: 10px
-    
 }
 
 .itemInfo {

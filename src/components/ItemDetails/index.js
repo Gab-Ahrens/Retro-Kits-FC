@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Zoom from "react-img-zoom";
 import { useParams } from "react-router-dom";
 import "./styles.modules.css"
+
 
 export function ShowItemDetails() {
 
@@ -29,10 +31,19 @@ export function ShowItemDetails() {
             </section>
 
             <section className="container">
-
+                
                 <span className="itemImg">
-                    {!isLoading ? <img src={require(`../../assets/jerseys/${data.img}.png`)}/> : <p>Imagem carregando...</p>}
+                    {/* {!isLoading ? <img src={require(`../../assets/jerseys/${data.img}.png`)}/> : <p>Imagem carregando...</p>} */}
+                    {!isLoading ?
+                    <Zoom
+                        img={require(`../../assets/jerseys/${data.img}.png`)}
+                        zoomScale={2}
+                        width={500}
+                        height={600}                
+                    />                     
+                    : <p>Imagem carregando...</p>}
                 </span>
+                
                 <span className="itemInfo">
                     <p><b>Preço:</b> R$ {data.price}</p>
                     <p><b>Descrição:</b> {data.description}</p>
