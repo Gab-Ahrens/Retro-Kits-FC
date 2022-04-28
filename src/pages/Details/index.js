@@ -1,12 +1,10 @@
 import { ItemDetails } from "../../components/ItemDetails";
-import { Navbar } from "../../components/Navbar";
 
 export function DetailsPage() {
 
     return (
         <div>
-            <div>
-                <Navbar />
+            <div>               
                 <ItemDetails />
             </div>
         </div>
