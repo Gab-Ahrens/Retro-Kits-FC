@@ -13,7 +13,7 @@ export function Footer() {
                     <section className="internalLinks">
                         <ul>
                             <p>Fale Conosco</p>
-                            <p><Link to="/admin" component={<AdminPage />} className='link'>Área de Gerencimento</Link></p>
+                            <p><Link to="/admin" component={<AdminPage />} className='link'>Área de Gerenciamento</Link></p>
                         </ul>
                     </section>
                     <section className="logo">
