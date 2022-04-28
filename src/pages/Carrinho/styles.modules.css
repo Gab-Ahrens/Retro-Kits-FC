@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Gotham ;
+    src: url("../../assets/GothamMedium_1.ttf");
+}
+
+.carth2{
+    margin-top: 40px;
+}
+.carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+.cartitem{
+    height: 100px;
+    width: 700px;
+    font-family: Gotham;
+    border-bottom: 2px solid rgb(179, 178, 178);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(231, 230, 230);
+}
+
+.cartitem img{
+    width: 70px;
+}
+
+.carttitle{
+    width: 300px;
+    font-size: 18px;
+}
+
+.price{
+    font-size: 18px;
+}
+
+.remove{
+    width: 30px;
+    height: 30px;
+    background-color:red;
+    color: white;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.total{
+    display: flex;
+    justify-content: center;
+    gap: 280px;
+    margin: 0px auto 50px auto;
+    width: 700px;
+}
+
+.carth2 img {
+    width: 23px;
+    margin-right: 5px;
+}

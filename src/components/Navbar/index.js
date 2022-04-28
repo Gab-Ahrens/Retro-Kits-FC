@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Home } from "../../pages/Home";
 import { Clubes } from "../../pages/Clubes"
 import { Selecoes } from "../../pages/Selecoes"
 import { Carrinho } from "../../pages/Carrinho"
 import "./styles.modules.css"
+import { SearchResult } from "../../pages/SearchResult";
 
 export function Navbar() {
+    const[search,setSearch]=useState('')
+
+    function handleChange(event){
+        setSearch(event.target.value)
+        console.log(search)
+    }
     
     return (
         <div>
@@ -24,8 +31,9 @@ export function Navbar() {
                     id="site-search"
                     placeholder="Busque seu manto"
                     className="navinput"
+                    onChange={handleChange}
                 />
-                <button className="navbutton">Buscar!</button>
+                <Link to={`/search/${search}`} component={<SearchResult/>}><button className="navbutton">Buscar!</button></Link>
                 </form>
             </nav>
 

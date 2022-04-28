@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react"
 import axios from "axios"
+import "./styles.modules.css"
 
 export function Carrinho () {
 
@@ -11,22 +12,35 @@ export function Carrinho () {
     }
     fetchJersey()
 },[])
+
+function removeCart(event){
+    console.log(event.target.id)
+    axios.delete(`https://ironrest.herokuapp.com/deleteOne/favgeh?img=${event.target.id}`)
+    setTimeout(() => window.location.reload(), 500)
+}
+
+    const sum = jerseys.reduce((a,b) => {return Number(a) + Number(b.price)} ,0)
     return (
         <div>
-        <h2>Carrinho</h2>
+        <h2 className="carth2"><img src={require(`../../assets/blackshoppingcart.png`)} alt='shoppingcart'/>Carrinho</h2>
 
             <ul className="carrinho">
                 {jerseys.map((jersey)=>{return(
 
-                <li className="card" key={jersey.id}>
-                    
-                    <p>{jersey.title}</p>
-                    <p>R$ {jersey.price}</p>
-                    <button className="addcart">Adicionar ao carrinho</button>
+                <li className="cartitem" key={jersey.id}>
+                    <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
+                    <p className="carttitle">{jersey.title}</p>
+                    <p className="price">R$ {jersey.price.toFixed(2)}</p>
+                    <button className="remove" id={jersey.img} onClick={removeCart}>X</button>
                 </li>
 
         )})}
             </ul>
+
+            <div className="total">
+                <h2>Total:</h2>
+                <h2>R$ {sum.toFixed(2)}</h2>
+            </div>
             </div>
     );
 }

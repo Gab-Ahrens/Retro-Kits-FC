@@ -6,41 +6,48 @@
 footer {
     font-family: Gotham;
     background-color: black;
-    padding: 40px 100px 40px 100px;
+
+}
+
+.footerContainer {
     display: flex;
-    justify-content: space-bewteen;
-    align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+
+.internalLinks {
+    font-family: Gotham;
+    color: white;
+    font-size: 20px;
+    margin-left: 40px;
     margin-bottom: 5px;
-    list-style-type: none;
 }
 
-.footersocial a {
+.internalLinks a {
     font-family: Gotham;
-    list-style: none;
-    text-decoration: none;
-    margin: 10px;
     color: white;
     font-size: 20px;
-    list-style-type: none;
 }
 
-.footersocial img {
-    display: flex;
-    justify-content: space-between;
-    width: 50px;
-}
-
-.footerinfo {
-    font-family: Gotham;
-    list-style: none;
-    text-decoration: none;
-    margin: 10px;
-    color: white;
-    font-size: 20px;
-    list-style-type: none;
+.logo {
+    margin: 20px;
 }
 
 .logo img {
-    width: 150px;
+    width: 160px;
+    align-items: center;
+	align-content: stretch;
 }
 
+.socialMedia {
+    margin-right: 40px;   
+}
+
+.socialMedia img {
+    width: 40px;
+    margin-right: 10px;
+    
+}

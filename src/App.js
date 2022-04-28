@@ -6,6 +6,7 @@ import { AdminPage } from "./pages/Admin";
 import { Carrinho } from "./pages/Carrinho";
 import { Clubes } from "./pages/Clubes";
 import { Home } from "./pages/Home";
+import { SearchResult } from "./pages/SearchResult";
 import { Selecoes } from "./pages/Selecoes";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/selecoes" element={<Selecoes />}/>
         <Route path="/carrinho" element={<Carrinho />}/>
         <Route path="/details/:id" element={<ShowItemDetails />} />
+        <Route path="/search/:searchresults" element={<SearchResult />} />
       </Routes>
       <Footer />
       </BrowserRouter>
