@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./styles.modules.css"
 
 export function ShowItemDetails() {
 
@@ -21,19 +22,28 @@ export function ShowItemDetails() {
     },[])
 
     return (
-        <div>
-            <div>
-                <div>
-                    <h2>{data.title}</h2>
-                </div>            
-                <div>
+    <div>
+        <div className="detailsMain">
+            <section className="itemName">
+                <h2>{data.title}</h2>
+            </section>
+
+            <section className="container">
+
+                <span className="itemImg">
                     {!isLoading ? <img src={require(`../../assets/jerseys/${data.img}.png`)}/> : <p>Imagem carregando...</p>}
-                </div>
-            </div>
-            <div>
-                <p><b>Preço:</b> R$ {data.price}</p>
-                <p><b>Descrição:</b> {data.description}</p>
-            </div>
+                </span>
+                <span className="itemInfo">
+                    <p><b>Preço:</b> R$ {data.price}</p>
+                    <p><b>Descrição:</b> {data.description}</p>
+                </span>
+                <span>
+                    <button className="addtocart">Adicionar ao carrinho</button>
+                </span>
+
+            </section>
         </div>
+
+    </div>
     );
 }
