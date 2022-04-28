@@ -22,7 +22,7 @@ function removeCart(event){
     const sum = jerseys.reduce((a,b) => {return Number(a) + Number(b.price)} ,0)
     return (
         <div>
-        <h2 className="carth2">Carrinho</h2>
+        <h2 className="carth2"><img src={require(`../../assets/blackshoppingcart.png`)} alt='shoppingcart'/>Carrinho</h2>
 
             <ul className="carrinho">
                 {jerseys.map((jersey)=>{return(
