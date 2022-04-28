@@ -50,6 +50,10 @@
     border-radius: 5px;
 }
 
+.remove:active{
+    border: 2px solid white;
+}
+
 .total{
     display: flex;
     justify-content: center;

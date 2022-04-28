@@ -18,10 +18,18 @@ export function ShowItemDetails() {
             );
             setData(response.data);
             setisLoading(false);
+            console.log(data)
         }
         fetchItems();
         
     },[])
+
+    async function addCart(){
+        
+        axios.post("https://ironrest.herokuapp.com/favgeh",data)
+        
+    }
+
 
     return (
     <div>
@@ -50,7 +58,7 @@ export function ShowItemDetails() {
                     <p><b>Descrição:</b> {data.description}</p>
                 </span>
                 <span className="cartbutton">
-                    <button className="addtocart"><img src={require("../../assets/shoppingcart.png")}/>Adicionar ao carrinho</button>
+                    <button className="addtocart" onClick={addCart}><img src={require("../../assets/shoppingcart.png")}/>Adicionar ao carrinho</button>
                 </span>
                 
 

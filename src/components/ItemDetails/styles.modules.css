@@ -37,7 +37,7 @@
 
 .addtocart {
     height: 60px;
-    width: 250px;
+    width: 270px;
     background-color: black;
     color: white;
     font-family: Gotham;
@@ -45,6 +45,10 @@
     border: 0;
     margin-bottom: 10px;
     font-size: 20px;
+}
+
+.addtocart:active{
+    border: 2px solid gray;
 }
 
 
