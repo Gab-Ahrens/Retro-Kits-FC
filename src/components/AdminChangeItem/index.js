@@ -14,12 +14,18 @@ export function ChangeItem(props) {
         description: props.id.description,
     });
 
+
     function dialogHandleclick() {
         setdialogChangeItem(true);
     }
 
     function handleChange(event) {
         setDetails({ ...details, [event.target.name]: event.target.value });
+    }
+
+    function handleNumbers(event) {
+        const number = parseInt(event.target.value)
+        setDetails({ ...details, [event.target.name]: number });
     }
 
     function handleSubmit(event) {
@@ -35,7 +41,7 @@ export function ChangeItem(props) {
         setDetails({
             type: "",
             title: "",
-            price: "",
+            price: 0,
             img: "",
             description: "",           
         });
@@ -68,11 +74,11 @@ export function ChangeItem(props) {
                     />
                     <label htmlFor="inputPrice">Price</label>
                     <input
-                        type="text"
+                        type="number"
                         id="inputPrice"
                         value={details.price}
                         name="price"
-                        onChange={handleChange}               
+                        onChange={handleNumbers}               
                     />
                     <label htmlFor="inputImg">Image</label>
                     <input
@@ -90,7 +96,7 @@ export function ChangeItem(props) {
                         name="description"
                         onChange={handleChange}
                     />
-                    <button type="submit">Change Item</button>
+                    <button type="submit">Modificar Item</button>
                 </form>
             </dialog>
         </div>
