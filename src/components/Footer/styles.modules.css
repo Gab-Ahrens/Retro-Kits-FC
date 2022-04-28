@@ -6,30 +6,32 @@
 footer {
     font-family: Gotham;
     background-color: black;
-
 }
 
 .footerContainer {
     display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	align-content: stretch;
 }
 
 .internalLinks {
     font-family: Gotham;
     color: white;
     font-size: 20px;
-    margin-left: 40px;
-    margin-bottom: 5px;
+    position: absolute;
+    left: 100px;
 }
 
-.internalLinks a {
+.internalLinks p {
     font-family: Gotham;
     color: white;
     font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.internalLinks a {
+    color: white;
 }
 
 .logo {
@@ -40,14 +42,4 @@ footer {
     width: 160px;
     align-items: center;
 	align-content: stretch;
-}
-
-.socialMedia {
-    margin-right: 40px;   
-}
-
-.socialMedia img {
-    width: 40px;
-    margin-right: 10px;
-    
 }
