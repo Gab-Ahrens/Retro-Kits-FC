@@ -9,23 +9,24 @@ export function Footer() {
     return(
         <div>
             <footer>
-                <section className="footerinfo">
-                    <ul>
-                        <li>Fale Conosco</li>
-                        <li>Termos e Condições</li>
-                        <li><Link to="/admin" component={<AdminPage />} className='link'>Área de Gerencimento</Link></li>
-                    </ul>
-                </section>
-                <section className="logo">
-                    <img src={require("../../assets/logo/retrofclogo.png")}/>
-                </section>
-                <section className="footersocial">
-                    <ul>
-                        <li><a href="#"><img src={require("../../assets/social/facebook.png")}/></a></li>
-                        <li><a href="#"><img src={require("../../assets/social/instagram.png")}/></a></li>
-                        <li><a href="#"><img src={require("../../assets/social/twitter.png")}/></a></li>
-                    </ul>                    
-                </section>
+                <div className="footerContainer">
+                    <section className="internalLinks">
+                        <ul>
+                            <p>Fale Conosco</p>
+                            <p><Link to="/admin" component={<AdminPage />} className='link'>Área de Gerencimento</Link></p>
+                        </ul>
+                    </section>
+                    <section className="logo">
+                        <img src={require("../../assets/logo/retrofclogo.png")}/>
+                    </section>
+                    <section className="socialMedia">
+                        <ul>
+                            <a href="#"><img src={require("../../assets/social/facebook.png")}/></a>
+                            <a href="#"><img src={require("../../assets/social/instagram.png")}/></a>
+                            <a href="#"><img src={require("../../assets/social/twitter.png")}/></a>
+                        </ul>                    
+                    </section>
+                </div>
             </footer>
         </div>
     );
