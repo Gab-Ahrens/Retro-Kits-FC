@@ -1,15 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { isCompositeComponent } from "react-dom/test-utils";
 import { AddItem } from "../AdminAddItem";
 import { ChangeItem } from "../AdminChangeItem";
 import { DeleteItem } from "../AdminDeleteItem";
-import { Navbar } from "../Navbar";
 import "./styles.modules.css"
 
 
 
 export function ReadItems() {
     const [data, setData] = useState([]);
+
     useEffect(() => {
         async function fetchItems() {
             const response = await axios.get (
@@ -19,6 +20,8 @@ export function ReadItems() {
         }
         fetchItems();
     }, [])
+
+    console.log(data)
 
 
     return (

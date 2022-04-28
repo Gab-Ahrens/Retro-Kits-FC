@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import "./styles.modules.css"
+
 
 
 export function Home(){
@@ -35,7 +37,9 @@ async function addCart(event){
                 {jerseys.filter((jersey)=>{return jersey.type==='club'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
                 <li className="card" key={jersey._id}>
+                    <Link to={`/details/${jersey._id}`} >
                     <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
+                    </Link>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price.toFixed(2)}</p>
                     <button className="addcart"  id={jersey.img} onClick={addCart}>Adicionar ao carrinho</button>
@@ -50,7 +54,9 @@ async function addCart(event){
                 {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
 
                 <li className="card" key={jersey._id}>
+                <Link to={`/details/${jersey._id}`} >
                 <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
+                </Link>
                     <div className="imgjersey"></div>
                     <p className="cardtitle">{jersey.title}</p>
                     <p>R$ {jersey.price.toFixed(2)}</p>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AdminPage } from "../../pages/Admin";
 import { Home } from "../../pages/Home";
 import { Clubes } from "../../pages/Clubes"
 import { Selecoes } from "../../pages/Selecoes"
