@@ -27,8 +27,9 @@ export function ShowItemDetails() {
     <div>
         <div className="detailsMain">
             <section className="itemName">
-                <h2>{data.title}</h2>
+                <h2>- {data.title} -</h2>
             </section>
+            
 
             <section className="container">
                 
@@ -45,12 +46,13 @@ export function ShowItemDetails() {
                 </span>
                 
                 <span className="itemInfo">
-                    <p><b>Preço:</b> R$ {data.price}</p>
+                    <p><b>Preço:</b> R$ {data.price},00</p>
                     <p><b>Descrição:</b> {data.description}</p>
                 </span>
-                <span>
-                    <button className="addtocart">Adicionar ao carrinho</button>
+                <span className="cartbutton">
+                    <button className="addtocart"><img src={require("../../assets/shoppingcart.png")}/>Adicionar ao carrinho</button>
                 </span>
+                
 
             </section>
         </div>

@@ -31,7 +31,7 @@ async function addCart(event){
                 <h3>Qual manto você quer vestir hoje ?</h3>
             </header>
 
-            <h2>Nosso mix de clubes para você!</h2>
+            <h2>Camisas de clubes</h2>
 
             <ul className="seleçoes">
                 {jerseys.filter((jersey)=>{return jersey.type==='club'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
@@ -48,7 +48,7 @@ async function addCart(event){
         )})}
             </ul>
 
-            <h2>Nosso mix de seleções para você!</h2>
+            <h2>Camisas de Seleções</h2>
 
             <ul className="seleçoes">
                 {jerseys.filter((jersey)=>{return jersey.type==='seleçao'}).sort(()=> Math.random() - 0.5).slice(0,5).map((jersey)=>{return(
@@ -59,6 +59,7 @@ async function addCart(event){
                 </Link>
                     <div className="imgjersey"></div>
                     <p className="cardtitle">{jersey.title}</p>
+                
                     <p>R$ {jersey.price.toFixed(2)}</p>
                     <button className="addcart"  id={jersey.img} onClick={addCart}>Adicionar ao carrinho</button>
                 </li>

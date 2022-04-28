@@ -18,7 +18,8 @@
 	flex-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
-	align-content: stretch;;
+	align-content: stretch;
+    margin-bottom: 10px;
 }
 
 .itemImg {
@@ -45,3 +46,10 @@
     margin-bottom: 10px;
     font-size: 20px;
 }
+
+
+
+.cartbutton img {
+    width: 25px;
+}
+
