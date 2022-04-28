@@ -29,7 +29,7 @@ async function addCart(event){
                 <li className="card" key={jersey.id}>
                     <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="cardtitle">{jersey.title}</p>
-                    <p>R$ {jersey.price}</p>
+                    <p>R$ {jersey.price.toFixed(2)}</p>
                     <button className="addcart" id={jersey.img} onClick={addCart}>Adicionar ao carrinho</button>
                 </li>
 

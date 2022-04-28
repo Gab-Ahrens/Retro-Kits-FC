@@ -3,6 +3,9 @@
     src: url("../../assets/GothamMedium_1.ttf");
 }
 
+.carth2{
+    margin-top: 40px;
+}
 .carrinho{
     display: flex;
     flex-direction: column;

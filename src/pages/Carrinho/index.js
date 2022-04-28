@@ -22,7 +22,7 @@ function removeCart(event){
     const sum = jerseys.reduce((a,b) => {return Number(a) + Number(b.price)} ,0)
     return (
         <div>
-        <h2>Carrinho</h2>
+        <h2 className="carth2">Carrinho</h2>
 
             <ul className="carrinho">
                 {jerseys.map((jersey)=>{return(
@@ -30,7 +30,7 @@ function removeCart(event){
                 <li className="cartitem" key={jersey.id}>
                     <img src={require(`../../assets/jerseys/${jersey.img}.png`)} alt='jerseyimg'/>
                     <p className="carttitle">{jersey.title}</p>
-                    <p className="price">R$ {jersey.price}</p>
+                    <p className="price">R$ {jersey.price.toFixed(2)}</p>
                     <button className="remove" id={jersey.img} onClick={removeCart}>X</button>
                 </li>
 
@@ -39,7 +39,7 @@ function removeCart(event){
 
             <div className="total">
                 <h2>Total:</h2>
-                <h2>R$ {sum}</h2>
+                <h2>R$ {sum.toFixed(2)}</h2>
             </div>
             </div>
     );
